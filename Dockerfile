@@ -15,7 +15,4 @@ COPY ip_both.py ip_v4.py ip_v6.py ./
 EXPOSE 5000 5001 5002
 
 # Command to run the Flask apps
-CMD /bin/bash -c " \
-    python ip_both.py & \
-    python ip_v4.py & \
-    python ip_v6.py"
+CMD ["/bin/bash", "-c", "python ip_both.py & python ip_v4.py & python ip_v6.py"]
